@@ -1,5 +1,5 @@
 import os
-import sys  # sys нужен для передачи argv в QApplication
+import sys 
 import time
 from PyQt6 import QtCore, QtGui, QtWidgets
 from pyqtgraph import PlotWidget, plot
@@ -51,12 +51,8 @@ class Ui_MainWindow(object):
 
 class ExampleApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
-        # Это здесь нужно для доступа к переменным, методам
-        # и т.д. в файле testDesign_ui.py
         super().__init__()
-        self.setupUi(self)  # Это нужно для инициализации нашего дизайна
-        # self.graphWidget = pg.PlotWidget()
-        # self.setCentralWidget(self.graphWidget)
+        self.setupUi(self)
         self.buttonBrowse.clicked.connect(self.VisualizeDataFile)
         self.graphWidget.setBackground('#ffffff')
 
@@ -250,10 +246,10 @@ class ExampleApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
 def main():
-    app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
-    window = ExampleApp()  # Создаём объект класса ExampleApp
-    window.show()  # Показываем окно
-    app.exec()  # и запускаем приложение
+    app = QtWidgets.QApplication(sys.argv)
+    window = ExampleApp() 
+    window.show() 
+    app.exec()
 
 if __name__ == '__main__':
     main()
