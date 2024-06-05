@@ -1,2 +1,2 @@
 # SimilaritySearch
-Similarity Search in ECG using Keras
+Search for similar areas in an ECG using Keras
